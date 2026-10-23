@@ -52,8 +52,14 @@ class LiteFlowNetBackend(torch.nn.Module):
     """Wraps CaffeGraph instances (one per input size) sharing ONE set of weights."""
 
     def __init__(self, prototxt: str | Path, caffemodel: str | Path, expected_sha256: str | None = None,
-                 model_id: str = "B0", device: str = "cpu"):
+                 model_id: str = "B0", device: str = "cpu", size_policy: str = "resize"):
         super().__init__()
+        if size_policy not in ("resize", "pad"):
+            raise ValueError(size_policy)
+        # 'resize' = original pipeline (Resample to a multiple of 32 and rescale vectors);
+        # 'pad'    = project option: replicate-pad to a multiple of 32, crop the output back
+        #            (no resampling; chosen after the reliability analysis, see VALIDATION.md)
+        self.size_policy = size_policy
         self.prototxt = Path(prototxt)
         self.caffemodel = Path(caffemodel)
         for p in (self.prototxt, self.caffemodel):
@@ -69,7 +75,7 @@ class LiteFlowNetBackend(torch.nn.Module):
         self._weights = load_caffemodel(self.caffemodel)
         self._graphs: dict = {}
         self.shared = None  # ParameterDict shared by all graphs
-        self.preprocessing_id = "cai2019_matlab_demo"
+        self.preprocessing_id = "cai2019_matlab_demo" + ("" if size_policy == "resize" else "+pad32")
         self._graph(256, 256)
 
     def _graph(self, h: int, w: int) -> CaffeGraph:
@@ -91,6 +97,13 @@ class LiteFlowNetBackend(torch.nn.Module):
             img_a = img_a.expand(-1, 3, -1, -1)
             img_b = img_b.expand(-1, 3, -1, -1)
         h, w = img_a.shape[-2:]
+        if self.size_policy == "pad" and (h % 32 or w % 32):
+            ph, pw = (-h) % 32, (-w) % 32
+            pad = (pw // 2, pw - pw // 2, ph // 2, ph - ph // 2)
+            a = torch.nn.functional.pad(img_a, pad, mode="replicate")
+            b = torch.nn.functional.pad(img_b, pad, mode="replicate")
+            out = self._graph(h + ph, w + pw)(a.contiguous(), b.contiguous())
+            return out[..., pad[2]:pad[2] + h, pad[0]:pad[0] + w]
         return self._graph(h, w)(img_a.contiguous(), img_b.contiguous())
 
     @torch.no_grad()

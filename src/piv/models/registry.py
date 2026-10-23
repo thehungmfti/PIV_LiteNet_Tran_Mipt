@@ -21,7 +21,8 @@ def build_backbone(backend_cfg: dict, device: str = "cpu"):
     name = backend_cfg["name"]
     if name in ("B0", "B1"):
         bk = LiteFlowNetBackend(resolve(backend_cfg["prototxt"]), resolve(backend_cfg["weights_path"]),
-                                backend_cfg.get("weights_sha256"), model_id=name, device=device)
+                                backend_cfg.get("weights_sha256"), model_id=name, device=device,
+                                size_policy=backend_cfg.get("size_policy", "resize"))
         if name == "B1":
             ck = resolve(backend_cfg.get("checkpoint"))
             if ck is None or not ck.is_file():

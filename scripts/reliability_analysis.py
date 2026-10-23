@@ -145,24 +145,49 @@ def sweep(name, values, make, M, n, size, write_rows):
     return rows
 
 
+COLORS = {"B0": "#2a78d6", "B1": "#eb6834", "PIVlab": "#6250d6", "OpenPIV": "#e34948"}
+
+
 def plot_sweep(name, rows, xlabel, logx=False):
     fig, ax = plt.subplots(figsize=(6, 4))
-    for key, ls in (("B0_dense_epe", "-o"), ("B1_dense_epe", "-s"), ("B0_grid_epe", "--o"), ("B1_grid_epe", "--s"),
-                    ("PIVlab_grid_epe", "-^"), ("OpenPIV_grid_epe", "-v")):
-        if key in rows[0]:
-            ax.plot([r["value"] for r in rows], [r[key] for r in rows], ls, label=key.replace("_", " "))
+    for key, ls, mk in (("B0_dense_epe", "-", "o"), ("B0_grid_epe", "--", "o"), ("B1_dense_epe", "-", "s"),
+                        ("B1_grid_epe", "--", "s"), ("PIVlab_grid_epe", "-", "^"), ("OpenPIV_grid_epe", "-", "v")):
+        if key in rows[0] and rows[0][key] not in (None, ""):
+            m = key.split("_")[0]
+            ax.plot([float(r["value"]) for r in rows], [float(r[key]) for r in rows], ls=ls, marker=mk, ms=7, lw=2,
+                    color=COLORS[m], label=key.replace("_epe", "").replace("_", " "))
     ax.set_xlabel(xlabel); ax.set_ylabel("mean EPE (px)"); ax.set_yscale("log")
     if logx:
         ax.set_xscale("log")
-    ax.grid(alpha=0.3); ax.legend(fontsize=8); ax.set_title(name)
-    fig.tight_layout(); fig.savefig(OUT / f"{name}.png", dpi=120); plt.close(fig)
+    ax.grid(alpha=0.3); ax.legend(fontsize=8, frameon=False); ax.set_title(name.replace("_", " "))
+    ax.spines[["top", "right"]].set_visible(False)
+    fig.tight_layout(); fig.savefig(OUT / f"{name}.png", dpi=130); plt.close(fig)
+
+
+SWEEP_LABELS = {"displacement_magnitude": ("|d| (px/pair), uniform flow at 30 deg", False),
+                "particle_density_ppp": ("particles per pixel", True),
+                "particle_diameter_px": ("particle image diameter (px)", False),
+                "read_noise_counts": ("Gaussian read noise std (counts, 8-bit)", False),
+                "dropout_fraction": ("fraction of particles lost between frames (out-of-plane proxy)", False),
+                "low_intensity_peak": ("mean particle peak intensity (counts)", False)}
+
+
+def replot():
+    for name, (lab, logx) in SWEEP_LABELS.items():
+        f = OUT / f"{name}.csv"
+        if f.is_file():
+            plot_sweep(name, list(csv.DictReader(open(f))), lab, logx)
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--quick", action="store_true")
     ap.add_argument("--with-b1", action="store_true")
+    ap.add_argument("--replot", action="store_true", help="only redraw figures from the CSV files")
     args = ap.parse_args()
+    if args.replot:
+        replot()
+        return
     OUT.mkdir(parents=True, exist_ok=True)
     n = 2 if args.quick else 6
     size = 128
@@ -247,6 +272,9 @@ def main():
                 gains = [fitted_amplitude(d[1], lam, 16) for d in val]
             else:
                 gx, gy, d = val
+                if lam <= 2 * float(np.mean(np.diff(gx))):   # at/below the grid Nyquist: aliased, undefined
+                    row[f"{m}_gain"] = None
+                    continue
                 gains = []
                 for dd in d:
                     prof = np.nanmean(dd[1, 2:-2, :], 0)
@@ -259,7 +287,8 @@ def main():
     write_rows("spatial_response", rows)
     fig, ax = plt.subplots(figsize=(6, 4))
     for k in [k for k in rows[0] if k.endswith("_gain")]:
-        ax.semilogx([r["value"] for r in rows], [r[k] for r in rows], "-o", label=k[:-5])
+        pts = [(r["value"], r[k]) for r in rows if r[k] is not None]
+        ax.semilogx([p[0] for p in pts], [p[1] for p in pts], "-o", label=k[:-5])
     ax.axhline(1, color="k", lw=0.5); ax.set_xlabel("wavelength (px)"); ax.set_ylabel("amplitude gain")
     ax.set_title("sinusoidal response (amplitude 1 px)"); ax.legend(); ax.grid(alpha=0.3)
     fig.tight_layout(); fig.savefig(OUT / "spatial_response.png", dpi=120); plt.close(fig)

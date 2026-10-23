@@ -4,3 +4,51 @@ displacement_magnitude 1 {'B0_dense_epe': 0.0274, 'B0_grid_epe': 0.0282, 'B1_den
 displacement_magnitude 2 {'B0_dense_epe': 0.0327, 'B0_grid_epe': 0.034, 'B1_dense_epe': 0.0333, 'B1_grid_epe': 0.0346, 'PIVlab_grid_epe': 0.0431, 'OpenPIV_grid_epe': 0.0388}
 displacement_magnitude 3 {'B0_dense_epe': 0.0265, 'B0_grid_epe': 0.0281, 'B1_dense_epe': 0.0269, 'B1_grid_epe': 0.0283, 'PIVlab_grid_epe': 0.0376, 'OpenPIV_grid_epe': 0.0549}
 displacement_magnitude 4 {'B0_dense_epe': 0.0272, 'B0_grid_epe': 0.0289, 'B1_dense_epe': 0.0285, 'B1_grid_epe': 0.0306, 'PIVlab_grid_epe': 0.0334, 'OpenPIV_grid_epe': 0.0504}
+displacement_magnitude 6 {'B0_dense_epe': 0.0288, 'B0_grid_epe': 0.0307, 'B1_dense_epe': 0.0323, 'B1_grid_epe': 0.035, 'PIVlab_grid_epe': 0.0441, 'OpenPIV_grid_epe': 0.0561}
+displacement_magnitude 8 {'B0_dense_epe': 0.0325, 'B0_grid_epe': 0.0348, 'B1_dense_epe': 0.0313, 'B1_grid_epe': 0.0352, 'PIVlab_grid_epe': 0.0382, 'OpenPIV_grid_epe': 0.0625}
+displacement_magnitude 10 {'B0_dense_epe': 0.0317, 'B0_grid_epe': 0.0347, 'B1_dense_epe': 0.0312, 'B1_grid_epe': 0.0351, 'PIVlab_grid_epe': 0.0431, 'OpenPIV_grid_epe': 0.0791}
+displacement_magnitude 12 {'B0_dense_epe': 0.0306, 'B0_grid_epe': 0.0339, 'B1_dense_epe': 0.0354, 'B1_grid_epe': 0.0418, 'PIVlab_grid_epe': 0.0452, 'OpenPIV_grid_epe': 0.085}
+displacement_magnitude 16 {'B0_dense_epe': 0.0393, 'B0_grid_epe': 0.0442, 'B1_dense_epe': 0.0383, 'B1_grid_epe': 0.0475, 'PIVlab_grid_epe': 0.0567, 'OpenPIV_grid_epe': 0.1058}
+particle_density_ppp 0.005 {'B0_dense_epe': 0.0749, 'B0_grid_epe': 0.0798, 'B1_dense_epe': 0.0943, 'B1_grid_epe': 0.0983, 'PIVlab_grid_epe': 0.1607, 'OpenPIV_grid_epe': 0.2678}
+particle_density_ppp 0.01 {'B0_dense_epe': 0.0529, 'B0_grid_epe': 0.0564, 'B1_dense_epe': 0.0629, 'B1_grid_epe': 0.0665, 'PIVlab_grid_epe': 0.084, 'OpenPIV_grid_epe': 0.1071}
+particle_density_ppp 0.02 {'B0_dense_epe': 0.0369, 'B0_grid_epe': 0.0387, 'B1_dense_epe': 0.0422, 'B1_grid_epe': 0.0445, 'PIVlab_grid_epe': 0.0659, 'OpenPIV_grid_epe': 0.0661}
+particle_density_ppp 0.05 {'B0_dense_epe': 0.0259, 'B0_grid_epe': 0.0271, 'B1_dense_epe': 0.0368, 'B1_grid_epe': 0.0384, 'PIVlab_grid_epe': 0.0523, 'OpenPIV_grid_epe': 0.0406}
+particle_density_ppp 0.1 {'B0_dense_epe': 0.0237, 'B0_grid_epe': 0.0246, 'B1_dense_epe': 0.0346, 'B1_grid_epe': 0.0357, 'PIVlab_grid_epe': 0.0487, 'OpenPIV_grid_epe': 0.0358}
+particle_density_ppp 0.15 {'B0_dense_epe': 0.0225, 'B0_grid_epe': 0.0241, 'B1_dense_epe': 0.0336, 'B1_grid_epe': 0.0353, 'PIVlab_grid_epe': 0.0485, 'OpenPIV_grid_epe': 0.0304}
+particle_diameter_px 1.0 {'B0_dense_epe': 0.069, 'B0_grid_epe': 0.0716, 'B1_dense_epe': 0.0834, 'B1_grid_epe': 0.0861, 'PIVlab_grid_epe': 0.0871, 'OpenPIV_grid_epe': 0.0981}
+particle_diameter_px 1.5 {'B0_dense_epe': 0.0374, 'B0_grid_epe': 0.0394, 'B1_dense_epe': 0.048, 'B1_grid_epe': 0.0498, 'PIVlab_grid_epe': 0.068, 'OpenPIV_grid_epe': 0.0595}
+particle_diameter_px 2.0 {'B0_dense_epe': 0.0284, 'B0_grid_epe': 0.03, 'B1_dense_epe': 0.0398, 'B1_grid_epe': 0.041, 'PIVlab_grid_epe': 0.0593, 'OpenPIV_grid_epe': 0.0437}
+particle_diameter_px 3.0 {'B0_dense_epe': 0.0236, 'B0_grid_epe': 0.0244, 'B1_dense_epe': 0.0334, 'B1_grid_epe': 0.0344, 'PIVlab_grid_epe': 0.0479, 'OpenPIV_grid_epe': 0.0393}
+particle_diameter_px 4.0 {'B0_dense_epe': 0.0224, 'B0_grid_epe': 0.0231, 'B1_dense_epe': 0.0292, 'B1_grid_epe': 0.0303, 'PIVlab_grid_epe': 0.0385, 'OpenPIV_grid_epe': 0.0482}
+particle_diameter_px 6.0 {'B0_dense_epe': 0.0275, 'B0_grid_epe': 0.0287, 'B1_dense_epe': 0.0331, 'B1_grid_epe': 0.0345, 'PIVlab_grid_epe': 0.0458, 'OpenPIV_grid_epe': 0.0904}
+read_noise_counts 0 {'B0_dense_epe': 0.0139, 'B0_grid_epe': 0.0155, 'B1_dense_epe': 0.0279, 'B1_grid_epe': 0.0291, 'PIVlab_grid_epe': 0.047, 'OpenPIV_grid_epe': 0.0304}
+read_noise_counts 2 {'B0_dense_epe': 0.0299, 'B0_grid_epe': 0.0317, 'B1_dense_epe': 0.0397, 'B1_grid_epe': 0.0411, 'PIVlab_grid_epe': 0.0553, 'OpenPIV_grid_epe': 0.0466}
+read_noise_counts 5 {'B0_dense_epe': 0.0424, 'B0_grid_epe': 0.0442, 'B1_dense_epe': 0.0509, 'B1_grid_epe': 0.0524, 'PIVlab_grid_epe': 0.0608, 'OpenPIV_grid_epe': 0.0574}
+read_noise_counts 10 {'B0_dense_epe': 0.0681, 'B0_grid_epe': 0.0701, 'B1_dense_epe': 0.0751, 'B1_grid_epe': 0.0769, 'PIVlab_grid_epe': 0.0797, 'OpenPIV_grid_epe': 0.0854}
+read_noise_counts 20 {'B0_dense_epe': 0.1308, 'B0_grid_epe': 0.1336, 'B1_dense_epe': 0.1299, 'B1_grid_epe': 0.1327, 'PIVlab_grid_epe': 0.1327, 'OpenPIV_grid_epe': 0.157}
+read_noise_counts 30 {'B0_dense_epe': 0.2299, 'B0_grid_epe': 0.2345, 'B1_dense_epe': 0.2057, 'B1_grid_epe': 0.2117, 'PIVlab_grid_epe': 0.1971, 'OpenPIV_grid_epe': 0.2508}
+dropout_fraction 0.0 {'B0_dense_epe': 0.0264, 'B0_grid_epe': 0.0278, 'B1_dense_epe': 0.0347, 'B1_grid_epe': 0.0363, 'PIVlab_grid_epe': 0.0514, 'OpenPIV_grid_epe': 0.0437}
+dropout_fraction 0.05 {'B0_dense_epe': 0.0384, 'B0_grid_epe': 0.0406, 'B1_dense_epe': 0.0468, 'B1_grid_epe': 0.0487, 'PIVlab_grid_epe': 0.0678, 'OpenPIV_grid_epe': 0.0674}
+dropout_fraction 0.1 {'B0_dense_epe': 0.0521, 'B0_grid_epe': 0.0566, 'B1_dense_epe': 0.0561, 'B1_grid_epe': 0.0601, 'PIVlab_grid_epe': 0.0801, 'OpenPIV_grid_epe': 0.0888}
+dropout_fraction 0.2 {'B0_dense_epe': 0.1081, 'B0_grid_epe': 0.1123, 'B1_dense_epe': 0.0959, 'B1_grid_epe': 0.1028, 'PIVlab_grid_epe': 0.1113, 'OpenPIV_grid_epe': 0.1284}
+dropout_fraction 0.3 {'B0_dense_epe': 0.2738, 'B0_grid_epe': 0.2937, 'B1_dense_epe': 0.2526, 'B1_grid_epe': 0.2728, 'PIVlab_grid_epe': 0.1524, 'OpenPIV_grid_epe': 0.1846}
+low_intensity_peak 20 {'B0_dense_epe': 0.1065, 'B0_grid_epe': 0.1118, 'B1_dense_epe': 0.1367, 'B1_grid_epe': 0.1404, 'PIVlab_grid_epe': 0.1251, 'OpenPIV_grid_epe': 0.1418}
+low_intensity_peak 40 {'B0_dense_epe': 0.0559, 'B0_grid_epe': 0.0592, 'B1_dense_epe': 0.0681, 'B1_grid_epe': 0.0719, 'PIVlab_grid_epe': 0.0777, 'OpenPIV_grid_epe': 0.0788}
+low_intensity_peak 80 {'B0_dense_epe': 0.035, 'B0_grid_epe': 0.0371, 'B1_dense_epe': 0.0463, 'B1_grid_epe': 0.0483, 'PIVlab_grid_epe': 0.0563, 'OpenPIV_grid_epe': 0.0537}
+low_intensity_peak 150 {'B0_dense_epe': 0.0254, 'B0_grid_epe': 0.0269, 'B1_dense_epe': 0.035, 'B1_grid_epe': 0.0364, 'PIVlab_grid_epe': 0.0509, 'OpenPIV_grid_epe': 0.0424}
+low_intensity_peak 220 {'B0_dense_epe': 0.0235, 'B0_grid_epe': 0.0246, 'B1_dense_epe': 0.0319, 'B1_grid_epe': 0.0327, 'PIVlab_grid_epe': 0.0497, 'OpenPIV_grid_epe': 0.0388}
+{'factor': 'pivlab_settings', 'value': '64-32-16 step8 3pass gauss3', 'grid_epe': 0.0601927540934617, 'grid_epe_if_positions_shifted_-0.5px': 0.06206419312661943, 'bias_dx': -0.006330338056992728, 'n_vectors': 225, 'sec_per_pair': 0.17453925266666678}
+{'factor': 'pivlab_settings', 'value': '64-32 step8 2pass', 'grid_epe': 0.2909495088274161, 'grid_epe_if_positions_shifted_-0.5px': 0.29289964229001003, 'bias_dx': -0.011039037944835956, 'n_vectors': 49, 'sec_per_pair': 0.11720228383334567}
+{'factor': 'pivlab_settings', 'value': '64-32-16-16 step8 4pass', 'grid_epe': 0.05573091638956667, 'grid_epe_if_positions_shifted_-0.5px': 0.058421444180282854, 'bias_dx': -0.002973084593002155, 'n_vectors': 225, 'sec_per_pair': 0.19429061749997345}
+{'factor': 'pivlab_settings', 'value': '64-32-16 2Dgauss', 'grid_epe': 0.06200945621653682, 'grid_epe_if_positions_shifted_-0.5px': 0.06387889005152433, 'bias_dx': -0.007147995589508077, 'n_vectors': 225, 'sec_per_pair': 0.20912897633328006}
+{'factor': 'pivlab_settings', 'value': '64-32-16 spline deform', 'status': 'NOT RUN', 'reason': ''}
+{'factor': 'pivlab_settings', 'value': '64-32-16 no validation', 'grid_epe': 0.059748590265451415, 'grid_epe_if_positions_shifted_-0.5px': 0.0616773171379857, 'bias_dx': -0.006118873492987194, 'n_vectors': 225, 'sec_per_pair': 0.19414422583334576}
+{'factor': 'spatial_response', 'value': 8, 'B0_gain': 0.0038309473872093123, 'B1_gain': 0.0035673182136481546, 'PIVlab_gain': 5475.197672527709, 'OpenPIV_gain': 0.005762127673980654}
+{'factor': 'spatial_response', 'value': 12, 'B0_gain': 0.08168672558823793, 'B1_gain': 0.12912246264850677, 'PIVlab_gain': 0.20511006726558134, 'OpenPIV_gain': 0.26753410915728215}
+{'factor': 'spatial_response', 'value': 16, 'B0_gain': 0.595822151936835, 'B1_gain': 0.5086263531352531, 'PIVlab_gain': 10905.065592462111, 'OpenPIV_gain': 0.0017114231553126533}
+{'factor': 'spatial_response', 'value': 24, 'B0_gain': 0.9488175170967236, 'B1_gain': 0.9452271242536611, 'PIVlab_gain': 0.35715618498255347, 'OpenPIV_gain': 0.4231026005547931}
+{'factor': 'spatial_response', 'value': 32, 'B0_gain': 0.9863979559381256, 'B1_gain': 0.9865280860504416, 'PIVlab_gain': 0.5610222084874087, 'OpenPIV_gain': 0.7646065341533933}
+{'factor': 'spatial_response', 'value': 48, 'B0_gain': 0.9841507017518958, 'B1_gain': 0.9814132144847881, 'PIVlab_gain': 0.7768092424992957, 'OpenPIV_gain': 0.9401121077773569}
+{'factor': 'spatial_response', 'value': 64, 'B0_gain': 0.9642808950638945, 'B1_gain': 0.9529186310203169, 'PIVlab_gain': 0.8850596484218497, 'OpenPIV_gain': 0.978790151350653}
+{'factor': 'spatial_response', 'value': 128, 'B0_gain': 0.9637591038582376, 'B1_gain': 0.9721140259234055, 'PIVlab_gain': 0.979455273074338, 'OpenPIV_gain': 1.0023018386042517}
+[{'factor': 'image_size', 'value': '128x128', 'B0_dense_epe': 0.02648006693524384, 'B0_bias_dx': -0.0019696205854415894}, {'factor': 'image_size', 'value': '100x150', 'B0_dense_epe': 0.036342708096001965, 'B0_bias_dx': -0.02558937855064869}, {'factor': 'image_size', 'value': '250x250', 'B0_dense_epe': 0.032751727673733196, 'B0_bias_dx': -0.019595539197325706}, {'factor': 'image_size', 'value': '96x200', 'B0_dense_epe': 0.02749533852946981, 'B0_bias_dx': -0.006453458685427904}, {'factor': 'bit_depth_path', 'value': '8 vs 16-bit(x257) vs 12-bit(x16)', 'max_abs_diff_16': 0.0, 'max_abs_diff_12': 0.0016990900039672852}]

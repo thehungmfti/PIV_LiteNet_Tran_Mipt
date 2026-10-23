@@ -84,12 +84,18 @@
       40,
       300
     ],
-    "band_power_rel_err_mean": 5423808491265494.0,
-    "band_power_rel_err_median": 2788478331422764.5,
-    "band_power_ratio_mean": 5423808491265494.0,
-    "peak_freq_abs_err_mean_hz": 62.50000000000002,
-    "peak_freq_match_frac": 0.5,
-    "rms_rel_err_mean": 7.136284012812698e+17,
-    "log_psd_l1_band": 30.523175922791058
+    "n_signals": 32,
+    "n_signals_active": 0,
+    "band_power_rel_err_mean": null,
+    "band_power_rel_err_median": null,
+    "band_power_ratio_mean": null,
+    "band_power_pred_mean": 5.423808491265494e-05,
+    "band_power_gt_mean": 0.0,
+    "band_power_ratio_global": null,
+    "active_frac": 0.1,
+    "peak_freq_abs_err_mean_hz": null,
+    "peak_freq_match_frac": null,
+    "rms_rel_err_mean": null,
+    "log_psd_l1_band": null
   }
 }

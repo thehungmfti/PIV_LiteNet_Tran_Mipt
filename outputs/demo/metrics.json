@@ -7,7 +7,7 @@
       "epe_interior": 0.14711762964725494,
       "rmse_interior": 0.16896209120750427,
       "outlier_0.5px": 0.0023229474852071007,
-      "band_power_rel_err": 0.8267084889873095
+      "band_power_rel_err": 0.1432787101432767
     },
     {
       "file": "demo_uniform_01_000__clean.h5",
@@ -16,7 +16,7 @@
       "epe_interior": 0.021664079278707504,
       "rmse_interior": 0.02406410127878189,
       "outlier_0.5px": 0.0,
-      "band_power_rel_err": 5423808491265494.0
+      "band_power_rel_err": null
     }
   ],
   "notes": [],

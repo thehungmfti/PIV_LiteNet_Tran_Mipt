@@ -1,3 +1,11 @@
 [B1] ood_flow_orbiting_vortices_06_000__clean: 186.4s
 [B1] ood_flow_orbiting_vortices_06_000__high: 182.6s
 [B1] ood_flow_orbiting_vortices_06_000__low: 181.9s
+[B1] ood_flow_orbiting_vortices_06_000__medium: 180.8s
+[B1] ood_flow_orbiting_vortices_06_001__clean: 179.8s
+[B1] ood_flow_orbiting_vortices_06_001__high: 180.9s
+[B1] ood_flow_orbiting_vortices_06_001__low: 181.5s
+[B1] ood_flow_orbiting_vortices_06_001__medium: 177.8s
+[B1] ood_imaging_cellular_08_000__ood_heavy: 168.5s
+[B1] ood_imaging_vortex_street_07_000__ood_heavy: 172.3s
+[B1] test_double_frame_vortex_street_09_000__low: 21.5s

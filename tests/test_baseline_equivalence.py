@@ -190,3 +190,18 @@ def test_demo_backend_requires_flag():
     with pytest.raises(ValueError):
         build_backbone({"name": "demo"})
     assert build_backbone({"name": "demo", "demo_only": True}).info()["demo_only"] is True
+
+
+@needs_b0
+def test_size_policies_non_multiple_of_32():
+    from piv.data.synthetic import ParticleConfig, ParticleField, UniformFlow
+    pf = ParticleField(70, 100, ParticleConfig(), np.random.default_rng(0))
+    a = np.clip(np.round(pf.render()), 0, 255).astype(np.uint8)
+    pf.advect(UniformFlow(u=2.0, v=1.0), 0, 1)
+    b = np.clip(np.round(pf.render()), 0, 255).astype(np.uint8)
+    for pol in ("resize", "pad"):
+        bk = LiteFlowNetBackend(B0_PROTO, B0_WEIGHTS, size_policy=pol)
+        d = bk.predict(a, b)
+        assert d.shape == (2, 70, 100)
+        c = d[:, 8:-8, 8:-8]
+        assert abs(c[0].mean() - 2.0) < 0.15 and abs(c[1].mean() - 1.0) < 0.15

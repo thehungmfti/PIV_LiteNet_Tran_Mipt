@@ -11,3 +11,14 @@
 [B1] test_cellular_05_002__low: 181.7s
 [B1] test_cellular_05_002__medium: 178.6s
 [B1] test_vortex_street_04_000__clean: 178.6s
+[B1] test_vortex_street_04_000__high: 172.5s
+[B1] test_vortex_street_04_000__low: 177.2s
+[B1] test_vortex_street_04_000__medium: 172.7s
+[B1] test_vortex_street_04_001__clean: 182.3s
+[B1] test_vortex_street_04_001__high: 180.1s
+[B1] test_vortex_street_04_001__low: 176.7s
+[B1] test_vortex_street_04_001__medium: 175.4s
+[B1] test_vortex_street_04_002__clean: 171.5s
+[B1] test_vortex_street_04_002__high: 169.5s
+[B1] test_vortex_street_04_002__low: 169.8s
+[B1] test_vortex_street_04_002__medium: 170.3s
