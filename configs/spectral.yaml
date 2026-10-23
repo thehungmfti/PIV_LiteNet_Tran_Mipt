@@ -1,0 +1,21 @@
+# S3: M2 = M1 + spectral loss on long consecutive segments (init from M1).
+extends: temporal.yaml
+project: {name: M2, run_dir: outputs/train_M2}
+model: {init_from: outputs/train_M1/best.pt}
+training: {stage: M2, iters: 1500, lr: 2.0e-4, val_every: 250, spec_every: 1, val_segments: 6,
+           w_spec_val: 0.02, sequence_length: 128}
+losses: {w_disp: 1.0, w_grad: 0.5, w_spec: 0.05, w_seg_disp: 1.0, w_seg_grad: 0.5, eps: 0.01}
+spectral:
+  fs_source: timestamps
+  fs: 1000.0              # equals 1/dt_sample of the research data (validated against timestamps)
+  segment_length: 128     # Delta f = 7.8 Hz
+  nfft: 128
+  overlap: 0
+  detrend: mean
+  window: hann
+  fmin: 15.0              # band declared a priori from the generator design range (not from test GT)
+  fmax: 300.0
+  crop: 32
+  n_probes: 64
+  probe_seed: 0
+  band_definitions: [[15.0, 300.0]]

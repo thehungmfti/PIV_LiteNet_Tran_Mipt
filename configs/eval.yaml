@@ -1,0 +1,5 @@
+evaluation:
+  interior_margin: 8
+  context_trim: 2
+  spectral: {nperseg: 64, noverlap: 32, band: [15, 300], probe_step: 16, probe_offset: 8}
+  outlier_thresholds_px: [0.5, 1.0]

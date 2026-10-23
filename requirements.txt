@@ -1,0 +1,12 @@
+# Tested versions: see environment.lock
+numpy>=1.26
+scipy>=1.11
+torch>=2.2
+h5py>=3.9
+pyyaml>=6
+matplotlib>=3.8
+protobuf>=4
+scikit-image>=0.22
+pytest>=7
+grpcio-tools>=1.60     # only to recompile caffe.proto (pre-compiled caffe_pb2.py is included)
+openpiv>=0.25          # optional comparator (GPLv3, installed separately)

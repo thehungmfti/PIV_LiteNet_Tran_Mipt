@@ -1,0 +1,17 @@
+# third-party sources and weights (own licences; fetched by scripts/fetch_third_party.*)
+third_party/
+# large generated data / caches (reproducible from configs + seeds)
+data/
+outputs/cache/
+outputs/demo/data/
+outputs/benchmark/pred/
+outputs/benchmark/gt_grid/
+outputs/**/last.pt
+*.tmp
+__pycache__/
+*.egg-info/
+.pytest_cache/
+logs/*.log.tmp
+outputs/train_B1/best.pt
+outputs/**/*.tmp
+outputs/train_B1/B1.pt   # derived from research-only weights: kept locally, not published

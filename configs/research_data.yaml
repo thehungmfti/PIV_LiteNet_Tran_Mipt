@@ -1,0 +1,32 @@
+# Tier-A synthetic research dataset (analytic flows, known GT). CPU-sized: 128x128.
+project: {name: piv_temporal_spectral, seed: 2026, run_dir: outputs/data_research}
+backend: {name: none, demo_only: false}
+data:
+  out_dir: data/research
+  h: 128
+  w: 128
+  fs: 1000.0                 # frame rate (continuous high-speed), Hz -> dt_pair = dt_sample = 1 ms
+  mode: continuous
+  calibration: {mode: scalar, sx_m_per_px: 1.0e-4, sy_m_per_px: 1.0e-4,
+                note: "DECLARED for synthetic data (0.1 mm/px); not a measured calibration"}
+  particles: {ppp: 0.05, d_mean: 2.5, d_std: 0.5, peak_mean: 150.0, peak_std: 40.0}
+  groups:
+    - {split: train, flow: vortex_street, n_parents: 7, n_frames: 145, noise: [clean, low, medium, high]}
+    - {split: train, flow: cellular,      n_parents: 7, n_frames: 145, noise: [clean, low, medium, high]}
+    - {split: val,   flow: vortex_street, n_parents: 2, n_frames: 145, noise: [clean, low, medium, high]}
+    - {split: val,   flow: cellular,      n_parents: 2, n_frames: 145, noise: [clean, low, medium, high]}
+    - {split: test,  flow: vortex_street, n_parents: 3, n_frames: 321, noise: [clean, low, medium, high]}
+    - {split: test,  flow: cellular,      n_parents: 3, n_frames: 321, noise: [clean, low, medium, high]}
+    # OOD: unseen flow family
+    - {split: ood_flow, ood: flow_unseen, flow: orbiting_vortices, n_parents: 2, n_frames: 321,
+       noise: [clean, low, medium, high]}
+    # OOD: unseen imaging (sparser, larger particles, dropout proxy, blur + strong noise)
+    - {split: ood_imaging, ood: imaging_unseen, flow: vortex_street, n_parents: 1, n_frames: 321,
+       particles: {ppp: 0.025, d_mean: 4.0, d_std: 1.0, dropout: 0.08},
+       noise: [{name: ood_heavy, read_noise: 8.0, poisson_gain: 1.0, bg_gradient: 30.0, brightness_drift: 0.15, blur_sigma: 0.8}]}
+    - {split: ood_imaging, ood: imaging_unseen, flow: cellular, n_parents: 1, n_frames: 321,
+       particles: {ppp: 0.025, d_mean: 4.0, d_std: 1.0, dropout: 0.08},
+       noise: [{name: ood_heavy, read_noise: 8.0, poisson_gain: 1.0, bg_gradient: 30.0, brightness_drift: 0.15, blur_sigma: 0.8}]}
+    # software acceptance: double-frame mode with dt_pair (0.2 ms) != dt_sample (1 ms)
+    - {split: test_double_frame, flow: vortex_street, n_parents: 1, n_frames: 40, mode: double_frame,
+       dt_pair: 0.0002, noise: [low]}

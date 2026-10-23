@@ -1,0 +1,9 @@
+# S2: M1 temporal residual refiner on frozen B1 fields (5-field centred window).
+extends: baseline.yaml
+project: {name: M1, seed: 2026, run_dir: outputs/train_M1}
+backend: {name: B1, checkpoint: outputs/train_B1/B1.pt}
+data: {root: data/research}
+model: {context_fields: 5, causal: false, backbone_frozen: true, width: 32}
+training: {stage: M1, batch_size: 8, iters: 3000, lr: 5.0e-4, clip: 5.0, val_every: 250, val_batches: 12,
+           p_edge: 0.1, crop: 96, amp: false, resume: false, sequence_length: 5}
+losses: {w_disp: 1.0, w_grad: 0.5, eps: 0.01}

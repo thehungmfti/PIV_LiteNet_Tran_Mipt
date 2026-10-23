@@ -1,0 +1,6 @@
+# S4: M3 = M2 frozen + uncertainty head (head-only), Gaussian NLL; recalibration on val.
+extends: temporal.yaml
+project: {name: M3, run_dir: outputs/train_M3}
+model: {init_from: outputs/train_M2/best.pt, head_only: true}
+training: {stage: M3, iters: 1500, lr: 5.0e-4, val_every: 250}
+losses: {w_nll: 1.0, s_min: -9.0, s_max: 5.0}

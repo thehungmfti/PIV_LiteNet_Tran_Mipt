@@ -1,0 +1,4 @@
+# Ablation: spatial-only refiner (centre field only), parameter budget >= M1, same data/losses/iterations.
+extends: temporal.yaml
+project: {name: S1, run_dir: outputs/train_S1}
+training: {stage: spatial}

@@ -1,0 +1,18 @@
+# One-command CPU demo (small). Falls back to the DEMO backend (flagged) if B0 weights are absent.
+extends: baseline.yaml
+project: {name: piv_demo, seed: 7, run_dir: outputs/demo}
+data:
+  out_dir: outputs/demo/data
+  h: 64
+  w: 64
+  fs: 1000.0
+  mode: continuous
+  calibration: {mode: scalar, sx_m_per_px: 1.0e-4, sy_m_per_px: 1.0e-4, note: "DECLARED demo calibration"}
+  particles: {ppp: 0.05, d_mean: 2.5}
+  groups:
+    - {split: demo, flow: cellular, n_parents: 1, n_frames: 97, noise: [medium]}
+    - {split: demo, flow: uniform,  n_parents: 1, n_frames: 9,  noise: [clean]}
+export: {velocity: true}
+evaluation:
+  interior_margin: 6
+  spectral: {nperseg: 32, band: [40, 300], probe_step: 16, probe_offset: 8}

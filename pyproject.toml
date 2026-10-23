@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "piv-temporal-spectral"
+version = "0.1.0"
+description = "Temporal and spectral PIV refinement with a PIV-LiteFlowNet-en baseline (research code)"
+requires-python = ">=3.10"
+dependencies = ["numpy", "scipy", "torch", "h5py", "pyyaml", "matplotlib", "protobuf", "scikit-image"]
+
+[project.optional-dependencies]
+compare = ["openpiv"]
+dev = ["pytest", "grpcio-tools"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"piv.models._caffe" = ["caffe.proto"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "."]

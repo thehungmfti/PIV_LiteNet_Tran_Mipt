@@ -1,0 +1,20 @@
+# B0: original PIV-LiteFlowNet-en weights + original preprocessing (MATLAB demo), PyTorch graph interpreter.
+project: {name: piv_temporal_spectral, seed: 2026, run_dir: outputs/B0}
+backend:
+  name: B0
+  source_commit: 128768b53a52c245883b4048cdd57698617ca4cf   # shengzesnail/PIV-LiteFlowNet-en
+  prototxt: third_party/PIV-LiteFlowNet-en/caffe/models/PIV-LiteFlowNet-en/PIV-LiteFlowNet-en_deploy.prototxt
+  weights_path: third_party/PIV-LiteFlowNet-en/caffe/models/PIV-LiteFlowNet-en/PIV-LiteFlowNet-en.caffemodel
+  weights_sha256: 8b9a0c76eb85e5a8988654fd0b165ee0fb73088d4d3d039208567e6e96fd868b
+  preprocessing_id: cai2019_matlab_demo     # gray -> 3 identical channels, x/255, minus learned RGB mean
+  demo_only: false
+cache_dir: outputs/cache
+data: {root: data/research, mode: continuous, dt_pair_source: timestamps, calibration: from_file, masks: from_file}
+model: {context_fields: 5, causal: false, backbone_frozen: true}
+export: {units: pixel/pair, hdf5: true, figures: true, save_raw_prediction: true, velocity: false}
+evaluation:
+  interior_margin: 8
+  spectral: {nperseg: 64, noverlap: 32, band: [15, 300], probe_step: 16, probe_offset: 8, window: hann, detrend: mean}
+  bootstrap_unit: run+time_block
+  block_length: 16
+  confidence_level: 0.95

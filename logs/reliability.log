@@ -1,0 +1,6 @@
+displacement_magnitude 0.25 {'B0_dense_epe': 0.026, 'B0_grid_epe': 0.0268, 'B1_dense_epe': 0.032, 'B1_grid_epe': 0.0321, 'PIVlab_grid_epe': 0.0472, 'OpenPIV_grid_epe': 0.0299}
+displacement_magnitude 0.5 {'B0_dense_epe': 0.0281, 'B0_grid_epe': 0.0286, 'B1_dense_epe': 0.0318, 'B1_grid_epe': 0.0325, 'PIVlab_grid_epe': 0.0432, 'OpenPIV_grid_epe': 0.0366}
+displacement_magnitude 1 {'B0_dense_epe': 0.0274, 'B0_grid_epe': 0.0282, 'B1_dense_epe': 0.0296, 'B1_grid_epe': 0.0309, 'PIVlab_grid_epe': 0.0412, 'OpenPIV_grid_epe': 0.038}
+displacement_magnitude 2 {'B0_dense_epe': 0.0327, 'B0_grid_epe': 0.034, 'B1_dense_epe': 0.0333, 'B1_grid_epe': 0.0346, 'PIVlab_grid_epe': 0.0431, 'OpenPIV_grid_epe': 0.0388}
+displacement_magnitude 3 {'B0_dense_epe': 0.0265, 'B0_grid_epe': 0.0281, 'B1_dense_epe': 0.0269, 'B1_grid_epe': 0.0283, 'PIVlab_grid_epe': 0.0376, 'OpenPIV_grid_epe': 0.0549}
+displacement_magnitude 4 {'B0_dense_epe': 0.0272, 'B0_grid_epe': 0.0289, 'B1_dense_epe': 0.0285, 'B1_grid_epe': 0.0306, 'PIVlab_grid_epe': 0.0334, 'OpenPIV_grid_epe': 0.0504}

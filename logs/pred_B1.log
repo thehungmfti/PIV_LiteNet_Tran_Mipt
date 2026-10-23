@@ -1,0 +1,13 @@
+[B1] test_cellular_05_000__clean: 178.1s
+[B1] test_cellular_05_000__high: 175.1s
+[B1] test_cellular_05_000__low: 177.2s
+[B1] test_cellular_05_000__medium: 177.8s
+[B1] test_cellular_05_001__clean: 176.2s
+[B1] test_cellular_05_001__high: 174.3s
+[B1] test_cellular_05_001__low: 175.9s
+[B1] test_cellular_05_001__medium: 175.6s
+[B1] test_cellular_05_002__clean: 172.4s
+[B1] test_cellular_05_002__high: 174.9s
+[B1] test_cellular_05_002__low: 181.7s
+[B1] test_cellular_05_002__medium: 178.6s
+[B1] test_vortex_street_04_000__clean: 178.6s

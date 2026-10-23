@@ -1,0 +1,65 @@
+{
+  "backbone": {
+    "model_id": "B0",
+    "prototxt": "/home/user/piv_litenet_tran_mipt/third_party/PIV-LiteFlowNet-en/caffe/models/PIV-LiteFlowNet-en/PIV-LiteFlowNet-en_deploy.prototxt",
+    "caffemodel": "/home/user/piv_litenet_tran_mipt/third_party/PIV-LiteFlowNet-en/caffe/models/PIV-LiteFlowNet-en/PIV-LiteFlowNet-en.caffemodel",
+    "caffemodel_sha256": "8b9a0c76eb85e5a8988654fd0b165ee0fb73088d4d3d039208567e6e96fd868b",
+    "preprocessing_id": "cai2019_matlab_demo",
+    "implementation": "piv.models.caffe_graph (PyTorch interpreter of the Caffe deploy graph)",
+    "filler_initialised_layers": [
+      "sum_exp_kernel_R_L6",
+      "scaled_flow0_R_L6_x",
+      "scaled_flow0_R_L6_y",
+      "sum_exp_kernel_R_L5",
+      "scaled_flow0_R_L5_x",
+      "scaled_flow0_R_L5_y",
+      "sum_exp_kernel_R_L4",
+      "scaled_flow0_R_L4_x",
+      "scaled_flow0_R_L4_y",
+      "sum_exp_kernel_R_L3",
+      "scaled_flow0_R_L3_x",
+      "scaled_flow0_R_L3_y",
+      "sum_exp_kernel_R_L2",
+      "scaled_flow0_R_L2_x",
+      "scaled_flow0_R_L2_y",
+      "sum_exp_kernel_R_L1",
+      "scaled_flow0_R_L1_x",
+      "scaled_flow0_R_L1_y",
+      "ScaleMag_flow"
+    ],
+    "caffemodel_blobs_not_used_by_deploy": [
+      "scaled_flow_R_L1_x",
+      "scaled_flow_R_L1_y",
+      "scaled_flow_R_L2_x",
+      "scaled_flow_R_L2_y",
+      "scaled_flow_R_L3_x",
+      "scaled_flow_R_L3_y",
+      "scaled_flow_R_L4_x",
+      "scaled_flow_R_L4_y",
+      "scaled_flow_R_L5_x",
+      "scaled_flow_R_L5_y",
+      "scaled_flow_R_L6_x",
+      "scaled_flow_R_L6_y"
+    ],
+    "demo_only": false
+  },
+  "dataset": "outputs/demo/data/demo/demo_uniform_01_000__clean.h5",
+  "dataset_sha256": "063b3be7bf2595caf004ac7a5f4a10fd97265c30d967e21d5b3f9d4ae331fdc1",
+  "run_id": "pred",
+  "units": "pixel/pair",
+  "demo_only": false,
+  "full_context_pairs": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "timing_s": {
+    "backbone_build": 0.09908276699979979,
+    "backbone": 0.47271544299974266
+  }
+}

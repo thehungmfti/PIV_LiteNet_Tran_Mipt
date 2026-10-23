@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Generate the tier-A research dataset (or another config) and validate every file.
+cd "$(dirname "$0")/.."
+CFG=${1:-configs/research_data.yaml}
+PYTHONPATH=src python -m piv.cli generate --config "$CFG" --workers ${WORKERS:-4}
+OUT=$(python -c "import yaml,sys;print(yaml.safe_load(open(sys.argv[1]))['data']['out_dir'])" "$CFG")
+fail=0
+for f in $(find "$OUT" -name "*.h5"); do
+  PYTHONPATH=src python -m piv.cli validate-data --input "$f" > /dev/null || { echo "INVALID $f"; fail=1; }
+done
+exit $fail
